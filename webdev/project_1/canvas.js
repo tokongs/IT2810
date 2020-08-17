@@ -1,11 +1,7 @@
 "usr strict";
 
-const c = document.getElementById("myCanvas");
+const c = document.getElementById("canvas");
 const ctx = c.getContext("2d");
-
-function createStar(x, y, radius){
-    return {x, y, radius}
-}
 
 const stars = [
     createStar(30, 20, 10),
@@ -14,6 +10,14 @@ const stars = [
     createStar(100, 40, 10),
     createStar(200, 30, 15),
 ];
+
+redraw(ctx);
+
+
+function createStar(x, y, radius){
+    return {x, y, radius}
+}
+
 
 function drawBackground(ctx){
     const gradient  = ctx.createLinearGradient(0, 0, 300, 300);
@@ -25,7 +29,6 @@ function drawBackground(ctx){
 }
 
 function drawStar(ctx, star){
-    console.log(star)
     const gradient = ctx.createRadialGradient(star.x, star.y, 1, star.x, star.y, star.radius);
     gradient.addColorStop(0, "yellow");
     gradient.addColorStop(1, "white");
@@ -74,9 +77,26 @@ function drawForeground(ctx){
     ctx.fill();
 }
 
-drawBackground(ctx);
-stars.forEach( (star) => {
-    drawStar(ctx, star)
-});
-drawMountains(ctx);
-drawForeground(ctx);
+function redraw(ctx){
+    drawBackground(ctx);
+    stars.forEach( (star) => {
+        drawStar(ctx, star)
+    });
+    drawMountains(ctx);
+    drawForeground(ctx);
+}
+
+$("#canvas").mousemove((event) => {
+
+    stars.forEach((star) => {
+        if(isInBoundingBox(event.offsetX, event.offsetY, star)){
+            star.x = event.offsetX;
+            redraw(ctx);
+        }
+    })
+})
+
+function isInBoundingBox(x, y, star) {
+
+    return (x >= star.x-star.radius) && (x <= star.x+star.radius) && (y >= star.y - star.radius) && (y <= star.y+star.radius)
+}
