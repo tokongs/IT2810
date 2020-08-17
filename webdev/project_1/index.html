@@ -4,6 +4,7 @@
     <title>Starry night</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Rubik:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -14,7 +15,7 @@
     <div id="content">
 
         <section>
-            <h2>About</h2>
+            <h1>About</h1>
                 <p>
                     "The Starry Night is an oil on canvas painting by Dutch Post-Impressionist painter Vincent van Gogh"
                     <cite> Taken from the wikipedia article <a href="https://en.wikipedia.org/wiki/The_Starry_Night">The Stary Night</a></cite>
@@ -22,54 +23,70 @@
                 
                 <p>
                     The images below are my takes on "The starry night" created with HTML5 Canvas and SVG. I, the artist, am a software developer, and obviously an artist.
-                    I like to eat pizza and sleep in the sun. There should be enough information here about me now. The amount of info is not specified, I don't think :(
+                    I like to eat pizza and sleep in the sun. There should be enough information here about me now. The amount of info is not specified, I don't think :(.
+                    Try to move the stars around if you feel like it. 
                 </p>
          </section>
 
         <div id="images">
             <div class="image-container">
-                <h2>Canvas</h2>
+                <h3>Canvas</h3>
                 <canvas id="canvas" width="300" height="300"></canvas>
             </div>
             <div class="image-container">
-                <h2>SVG</h2>
+                <h3>SVG</h3>
                 <object id="svg" data="starry_night.svg" type="image/svg+xml"></object>
             </div>
         </div>
 
-        <button id="docButton">Show documentation</button>
+        <button id="docButton">Toggle documentation</button>
         <article id="documentation">
             <h1>Documentation</h1>
+            <h2>CSS</h2>
             <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-                into
-                electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-                release of
-                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
-                Aldus PageMaker including versions of Lorem Ipsum
+                CSS flexbox is used to to organize the layout of my artworks. I chose flexbox because that's what I'm most familiar with,
+                but I don't see why you shouldn't be able to get the same results with grid. Because I only need a one dimensional container i chose 
+                flexbox. The usecase for grid seems to be when you have just that, a grid, meaning two dimensions. 
             </p>
+            <h2>Graphics</h2>
             <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-                into
-                electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-                release of
-                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
-                Aldus PageMaker including versions of Lorem Ipsum
+                I tried to split the two images in two seperate files. The SVG is places in the file named <b>starry_night.svg</b> and most of the canvas functionality is found
+                in <b>canvas.js</b>. The stars in the picture is a simple array of objects containg a position and a radius.
             </p>
+ 
+            <h3>Canvas</h3>
             <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-                into
-                electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-                release of
-                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
-                Aldus PageMaker including versions of Lorem Ipsum
+                I split all the elements of the picture into it's own function. Each drawing function takes the canvas context
+                as one of it's argument to avoid using the global variable too much. The drawStar function takes one of the star
+                objects and draws it, using it's properties. That means we can change the properties of any of the stars and redraw them in
+                another place or size. The canvas has it's own event listener which listens for "mousemove" evnts. When this event is triggered we loop through all the stars
+                and check if the mouse is inside it's bounding box. If it is, we just move the star along the x-axis whichever direction the mouse is moved. After we have moved a star 
+                we also have to redraw the canvas so that we can se the update. 
             </p>
+
+            <h3>SVG</h3>
+            <p>
+                It was a little easier to get the shapes on the screen with the SVG than with Canvas. The fact that I didn't need to programatically add any shapes makes the
+                SVG code a lot easier to read and reason with. Making it interative was also a lot easier with the SVG because I could add an eventlistener to each star individually.
+                So every circle has a listener which listens for "mousemove" events. When the listener gets an event it triggers the move function. All this function does is move the
+                start along the x-axis whichever direction. the mouse is moved.
+            </p>
+ 
+            <h2>jQuery</h2>
+            <p>
+                jQuery is used to easily select and change elements. It's also used to add my event listeners. I did not use jQuery in the SVG file as I couldn't figure out how to include it.
+                The documentation is shown/hidden with the jQuery function toggleSlide. 
+            </p>
+
+            <h2>Cross browser testing</h2>
+            <p>
+                The testing has been done by manually comparing Google chrome and Microsoft Edge. It seems like all the "features" work the same in both browsers which makes sense seeing
+                that they are both developed from the Chromium project. 
+            </p>
+            <h2>Important sources of information</h2>
+            <ul>  
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Relationship_of_Grid_Layout">Grid vs flexbox</a></li>
+            </ul>
         </article>
     </div>
     <script src="main.js"> </script>

@@ -14,11 +14,11 @@
   </defs>
 
     <rect fill="url(#backgroundGradient)" stroke="#000" x="0" y="0" width="300" height="300"/>
-	<circle id="star_0" fill="url(#starGradient)" cx="20" cy="20" r="10"/>
-    <circle id="star_1" fill="url(#starGradient)" cx="270" cy="60" r="30"/>
-    <circle id="star_2" fill="url(#starGradient)" cx="120" cy="150" r="20"/>
-    <circle id="star_3" fill="url(#starGradient)" cx="100" cy="40" r="10"/>
-    <circle id="star_4" fill="url(#starGradient)" cx="200" cy="30" r="15"/>
+	<circle fill="url(#starGradient)" cx="20" cy="20" r="10"/>
+    <circle fill="url(#starGradient)" cx="270" cy="60" r="30"/>
+    <circle fill="url(#starGradient)" cx="120" cy="150" r="20"/>
+    <circle fill="url(#starGradient)" cx="100" cy="40" r="10"/>
+    <circle fill="url(#starGradient)" cx="200" cy="30" r="15"/>
 
     <polygon points="0,230 300,150 300,300 0,300" style="fill:#dddddd;" />
     <polygon points="0,260 300,200 300,300 0,300" style="fill:#222244;" />

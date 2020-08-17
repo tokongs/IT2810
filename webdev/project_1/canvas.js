@@ -18,7 +18,6 @@ function createStar(x, y, radius){
     return {x, y, radius}
 }
 
-
 function drawBackground(ctx){
     const gradient  = ctx.createLinearGradient(0, 0, 300, 300);
     gradient.addColorStop(0, "blue");
