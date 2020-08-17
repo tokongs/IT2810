@@ -1,11 +1,80 @@
 <html>
-    <head>
-        <title>Starry night</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    </head>
-    <body>
+
+<head>
+    <title>Starry night</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header>
         <h1>Starry night</h1>
-        <canvas id="myCanvas" width="300" height="300"></canvas>
+    </header>
+
+    <div id="content">
+
+        <section>
+            <h2>About</h2>
+                <p>
+                    "The Starry Night is an oil on canvas painting by Dutch Post-Impressionist painter Vincent van Gogh"
+                    <cite> Taken from the wikipedia article <a href="https://en.wikipedia.org/wiki/The_Starry_Night">The Stary Night</a></cite>
+                </p>
+                
+                <p>
+                    The images below are my takes on "The starry night" created with HTML5 Canvas and SVG. I, the artist, am a software developer, and obviously an artist.
+                    I like to eat pizza and sleep in the sun. There should be enough information here about me now. The amount of info is not specified, I don't think :(
+                </p>
+         </section>
+
+        <div id="images">
+            <div class="image-container">
+                <h2>Canvas</h2>
+                <canvas id="myCanvas" width="300" height="300"></canvas>
+            </div>
+            <div class="image-container">
+                <h2>SVG</h2>
+                <object id="svg" data="starry_night.svg" type="image/svg+xml"></object>
+            </div>
+        </div>
+
+        <button id="docButton">Show documentation</button>
+        <article id="documentation">
+            <h1>Documentation</h1>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into
+                electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release of
+                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+                Aldus PageMaker including versions of Lorem Ipsum
+            </p>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into
+                electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release of
+                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+                Aldus PageMaker including versions of Lorem Ipsum
+            </p>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into
+                electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release of
+                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+                Aldus PageMaker including versions of Lorem Ipsum
+            </p>
+        </article>
+    </div>
+    <script src="main.js"> </script>
     <script src="canvas.js"> </script>
-    </body>
+    <script src="svg.js"> </script>
+</body>
+
 </html>

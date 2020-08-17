@@ -3,6 +3,18 @@
 const c = document.getElementById("myCanvas");
 const ctx = c.getContext("2d");
 
+function createStar(x, y, radius){
+    return {x, y, radius}
+}
+
+const stars = [
+    createStar(30, 20, 10),
+    createStar(270, 60, 30),
+    createStar(120, 150, 20),
+    createStar(100, 40, 10),
+    createStar(200, 30, 15),
+];
+
 function drawBackground(ctx){
     const gradient  = ctx.createLinearGradient(0, 0, 300, 300);
     gradient.addColorStop(0, "blue");
@@ -12,13 +24,14 @@ function drawBackground(ctx){
     ctx.fillRect(0, 0, 300, 300);
 }
 
-function drawStar(ctx, x, y, radius){
-    const gradient = ctx.createRadialGradient(x, y, 1, x, y, radius);
+function drawStar(ctx, star){
+    console.log(star)
+    const gradient = ctx.createRadialGradient(star.x, star.y, 1, star.x, star.y, star.radius);
     gradient.addColorStop(0, "yellow");
     gradient.addColorStop(1, "white");
 
     ctx.beginPath();
-    ctx.arc(x, y, radius, 0, 2 * Math.PI);
+    ctx.arc(star.x, star.y, star.radius, 0, 2 * Math.PI);
 
     ctx.fillStyle = gradient;
     ctx.fill();
@@ -62,10 +75,8 @@ function drawForeground(ctx){
 }
 
 drawBackground(ctx);
-drawStar(ctx, 30, 20, 10);
-drawStar(ctx, 270, 60, 30);
-drawStar(ctx, 120, 150, 20);
-drawStar(ctx, 100, 40, 10);
-drawStar(ctx, 200, 30, 15);
+stars.forEach( (star) => {
+    drawStar(ctx, star)
+});
 drawMountains(ctx);
 drawForeground(ctx);
