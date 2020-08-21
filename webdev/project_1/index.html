@@ -3,13 +3,14 @@
 <head>
     <title>Starry night</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="icon" type="image/svg" href="starry_night.svg"/>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Rubik:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <h1>Starry night</h1>
+        <h1>The starry night</h1>
     </header>
 
     <div id="content">
@@ -23,8 +24,7 @@
                 
                 <p>
                     The images below are my takes on "The starry night" created with HTML5 Canvas and SVG. I, the artist, am a software developer, and obviously an artist.
-                    I like to eat pizza and sleep in the sun. There should be enough information here about me now. The amount of info is not specified, I don't think :(.
-                    Try to move the stars around if you feel like it. 
+                    I like to eat pizza and sleep in the sun. Enough about me and my art, that's about all there is to know. Try to move the stars around if you feel like it. 
                 </p>
          </section>
 
@@ -39,14 +39,15 @@
             </div>
         </div>
 
-        <button id="docButton">Toggle documentation</button>
+        <button id="docButton">Show documentation</button>
         <article id="documentation">
             <h1>Documentation</h1>
             <h2>CSS</h2>
             <p>
                 CSS flexbox is used to to organize the layout of my artworks. I chose flexbox because that's what I'm most familiar with,
                 but I don't see why you shouldn't be able to get the same results with grid. Because I only need a one dimensional container i chose 
-                flexbox. The usecase for grid seems to be when you have just that, a grid, meaning two dimensions. 
+                flexbox. The usecase for grid seems to be when you have just that, a grid, meaning two dimensions. I do realize that I haven't been 
+                utilizing flexbox very much. But the page and assignment is really to simple to do anything else with it. 
             </p>
             <h2>Graphics</h2>
             <p>
@@ -75,13 +76,14 @@
             <h2>jQuery</h2>
             <p>
                 jQuery is used to easily select and change elements. It's also used to add my event listeners. I did not use jQuery in the SVG file as I couldn't figure out how to include it.
-                The documentation is shown/hidden with the jQuery function toggleSlide. 
+                The documentation is shown/hidden with the jQuery functions slideUp and slidDown. I also change the text of the button with jQuery.  
             </p>
 
             <h2>Cross browser testing</h2>
             <p>
                 The testing has been done by manually comparing Google chrome and Microsoft Edge. It seems like all the "features" work the same in both browsers which makes sense seeing
-                that they are both developed from the Chromium project. 
+                that they are both developed from the Chromium project. I opened the page in both and put them side by side. I then went through all the content in both 
+                browsers and tried to break something, but failed at that. 
             </p>
             <h2>Important sources of information</h2>
             <ul>  

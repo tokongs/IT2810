@@ -27,6 +27,23 @@ header {
     font-family: 'Pacifico', cursive;
 }
 
+#docButton {
+    padding: 5px;
+    color: aliceblue;
+    background-color: #3F669B;
+    border: none;
+    font-size: large;
+    outline: none;
+}
+
+#docButton:hover {
+    outline: rgb(243, 219, 4) solid 1px;
+}
+
+#documentation {
+    display: none;
+}
+
 header > h1 {
     font-size: 96;
 }
@@ -36,3 +53,4 @@ html, body {
     padding:0;    
     font-family: 'Rubik', sans-serif;
 }
+

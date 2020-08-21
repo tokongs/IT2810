@@ -1,7 +1,13 @@
 "use strict";
 
-$("#documentation").slideUp()
-
+// Toggle documentation
 $("#docButton").click(() => {
-        $("#documentation").slideToggle()
+        if($("#documentation").is(":hidden")){
+                $("#documentation").slideDown();
+                $("#docButton").text("Hide documentation");
+
+        } else {
+                $("#documentation").slideUp();
+                $("#docButton").text("Show documentation");
+        }
 });
